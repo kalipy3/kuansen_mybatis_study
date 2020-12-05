@@ -10,7 +10,7 @@ import com.kuang.pojo.User;
  * Distributed under terms of the MIT license.
  */
 
-public interface UserDao
+public interface UserMapper
 {
     List<User> getUserList();
 }

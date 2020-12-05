@@ -3,7 +3,7 @@
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
         <!-- namespace与dao层接口名一致 -->
-<mapper namespace="com.kuang.dao.UserDao">
+<mapper namespace="com.kuang.dao.UserMapper">
         <!-- id与dao层接口的相应方法名一致 resultType与id所对应的方法的返回值类型一致 -->
     <select id="getUserList" resultType="com.kuang.pojo.User">
         select * from mybatis.user

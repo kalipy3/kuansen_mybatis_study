@@ -33,5 +33,20 @@ public class UserDaoTest
         //关闭SqlSession
         sqlSession.close();
 	}
+    
+    @Test
+	public void test2() {
+	    SqlSession sqlSession = MybatisUtils.getSqlSession();
+
+        //方式二:
+        List<User> userList = sqlSession.selectList("com.kuang.dao.UserDao.getUserList"); 
+
+        for (User user : userList) {
+            System.out.println(user);
+        }
+
+        //关闭SqlSession
+        sqlSession.close();
+	}
 }
 

@@ -15,6 +15,7 @@
         </environment>
     </environments>
     <mappers>
+        <!-- 每一个Mapper.xml都要在mybatis的核心配置文件里注册 -->
         <mapper resource="com/kuang/dao/UserMapper.xml"/>
     </mappers>
 </configuration>

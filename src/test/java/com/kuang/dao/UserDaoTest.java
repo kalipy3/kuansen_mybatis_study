@@ -45,5 +45,22 @@ public class UserDaoTest
 
         sqlSession.close();
     }
+
+    //注意：增删改一定要提交事务
+    @Test
+    public void addUser() {
+        SqlSession sqlSession = MybatisUtils.getSqlSession();
+
+        UserMapper mapper = sqlSession.getMapper(UserMapper.class);
+
+        int res = mapper.addUser(new User(4, "kalipy", "pwd2233"));
+        if (res > 0) {
+            System.out.println("insert into 成功！");
+        }
+
+        //提交事务
+        sqlSession.commit();
+        sqlSession.close();
+    }
 }
 

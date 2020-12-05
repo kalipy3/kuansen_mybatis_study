@@ -61,3 +61,19 @@ read.txt
     注意mysql8.0驱动写法：
         jdbc:mysql://10.7.37.212:3306/mybatis?&useSSL=false&serverTimezone=UTC 
         jdbc:mysql://localhost:3306/数据库?useSSL=false&serverTimezone=UTC&characterEncoding=utf-8l
+
+    编写xml
+
+    编写mybatis工具类
+
+    编写代码
+        实体类
+            class User
+
+        Dao接口
+            interface UserDao
+
+        接口实现类
+            由原来在javaweb时候的UserDaoImpl转变为一个更简单的Mapper配置文件
+                xxMapper.xml
+

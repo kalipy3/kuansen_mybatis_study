@@ -12,6 +12,10 @@ import com.kuang.pojo.User;
 
 public interface UserMapper
 {
+    //查询全部用户
     List<User> getUserList();
+
+    //根据id查询用户
+    User getUserById(int id);
 }
 

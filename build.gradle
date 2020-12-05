@@ -11,6 +11,7 @@ plugins {
 
     // Apply the application plugin to add support for building a CLI application.
     id 'application'
+    id 'war'
 }
 repositories {
         maven { url 'https://maven.aliyun.com/repository/public' }
@@ -38,3 +39,12 @@ application {
     // Define the main class for the application.
     mainClassName = 'com.App'
 }
+
+//sourceSets.main.resources {
+//    srcDirs = ["src/main/resources","src/main/java"]; excludes ["**/*.java"]
+//}
+//war {
+//    from('src/main/java') {
+//        include '**/*.xml'
+//    }
+//}

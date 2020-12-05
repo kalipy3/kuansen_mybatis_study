@@ -7,14 +7,14 @@
         <environment id="development">
             <transactionManager type="JDBC"/>
             <dataSource type="POOLED">
-                <property name="driver" value="com.mysql.jdbc.Driver"/>
-                <property name="url" value="jdbc:mysql://127.0.0.1:3306/mybatis?&useSSL=false&serverTimezone=UTC"/>
+                <property name="driver" value="com.mysql.cj.jdbc.Driver"/>
+                <property name="url" value="jdbc:mysql://127.0.0.1:3306/mybatis?useSSL=false&amp;serverTimezone=UTC"/>
                 <property name="username" value="root"/>
                 <property name="password" value="Abcd1234"/>
             </dataSource>
         </environment>
     </environments>
     <mappers>
-        <mapper resource="org/mybatis/example/BlogMapper.xml"/>
+        <mapper resource="com/kuang/dao/UserMapper.xml"/>
     </mappers>
 </configuration>

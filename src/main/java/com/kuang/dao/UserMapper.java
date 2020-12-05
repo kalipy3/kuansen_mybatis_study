@@ -30,5 +30,7 @@ public interface UserMapper
 
     //万能的Map
     int addUser2(Map<String, Object> map);
+
+    User getUserById2(Map<String, Object> map);
 }
 

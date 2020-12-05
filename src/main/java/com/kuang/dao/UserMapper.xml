@@ -25,4 +25,8 @@
     <delete id="deleteUser" parameterType="int">
         delete from mybatis.user where id = #{id};
     </delete>
+    
+    <select id="getUserById2" parameterType="map" resultType="com.kuang.pojo.User">
+        select * from mybatis.user where id = #{helloId} and name = #{name};
+    </select>
 </mapper>

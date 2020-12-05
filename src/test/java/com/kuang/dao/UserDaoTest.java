@@ -21,19 +21,19 @@ import com.kuang.utils.MybatisUtils;
 public class UserDaoTest
 {
     @Test
-    public void addUser2() {
+    public void getUserById2() {
         SqlSession sqlSession = MybatisUtils.getSqlSession();
 
         UserMapper mapper = sqlSession.getMapper(UserMapper.class);
 
         Map<String, Object> map = new HashMap<String, Object>();
 
-        map.put("userid", 5);
-        map.put("passWord", "2211");
+        map.put("helloId", 3);
+        map.put("name", "hanser");
 
-        mapper.addUser2(map);
+        User user = mapper.getUserById2(map);
+        System.out.println(user);
 
-        sqlSession.commit();
         sqlSession.close();
     }
 }

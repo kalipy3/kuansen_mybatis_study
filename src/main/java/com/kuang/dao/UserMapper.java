@@ -32,5 +32,7 @@ public interface UserMapper
     int addUser2(Map<String, Object> map);
 
     User getUserById2(Map<String, Object> map);
+
+    List<User> getUserLike(String value);
 }
 

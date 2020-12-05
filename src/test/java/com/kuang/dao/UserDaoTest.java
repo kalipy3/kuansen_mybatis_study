@@ -26,13 +26,12 @@ public class UserDaoTest
 
         UserMapper mapper = sqlSession.getMapper(UserMapper.class);
 
-        Map<String, Object> map = new HashMap<String, Object>();
+        //模糊查询
+        List<User> userList = mapper.getUserLike("%s%");
 
-        map.put("helloId", 3);
-        map.put("name", "hanser");
-
-        User user = mapper.getUserById2(map);
-        System.out.println(user);
+        for (User user : userList) {
+            System.out.println(user);
+        }
 
         sqlSession.close();
     }

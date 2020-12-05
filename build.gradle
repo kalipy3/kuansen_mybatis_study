@@ -40,10 +40,19 @@ application {
     mainClassName = 'com.App'
 }
 
-//sourceSets.main.resources {
-//    srcDirs = ["src/main/resources","src/main/java"]; excludes ["**/*.java"]
-//}
-//war {
+//问题：gradle找不到java目录里的mybatis的xml文件
+//方法一：
+sourceSets.main.resources {
+    srcDirs = ["src/main/resources","src/main/java"]; excludes ["**/*.java"]
+}
+war {
+    from('src/main/java') {
+        include '**/*.xml'
+    }
+}
+
+//方法二：
+//processResources {
 //    from('src/main/java') {
 //        include '**/*.xml'
 //    }

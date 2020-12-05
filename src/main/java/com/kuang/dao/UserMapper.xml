@@ -14,8 +14,8 @@
     </select>
 
     <!-- 注意记得把select改为insert 对象中的属性 可以直接取出 -->
-    <insert id="addUser" parameterType="com.kuang.pojo.User">
-        insert into mybatis.user (id, name, pwd) values (#{id}, #{name}, #{pwd})
+    <insert id="addUser2" parameterType="map">
+        insert into mybatis.user (id, name, pwd) values (#{userid}, #{userName}, #{passWord})
     </insert>
 
     <update id="updateUser" parameterType="com.kuang.pojo.User">

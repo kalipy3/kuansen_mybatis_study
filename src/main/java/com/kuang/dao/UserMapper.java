@@ -1,6 +1,7 @@
 package com.kuang.dao;
 
 import java.util.List;
+import java.util.Map;
 
 import com.kuang.pojo.User;
 /*
@@ -26,5 +27,8 @@ public interface UserMapper
 
     //删除一个用户
     int deleteUser(int id);
+
+    //万能的Map
+    int addUser2(Map<String, Object> map);
 }
 

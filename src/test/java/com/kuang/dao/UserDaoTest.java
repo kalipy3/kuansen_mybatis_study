@@ -1,6 +1,8 @@
 package com.kuang.dao;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.apache.ibatis.session.SqlSession;
 
@@ -19,29 +21,17 @@ import com.kuang.utils.MybatisUtils;
 public class UserDaoTest
 {
     @Test
-	public void test() {
-	    SqlSession sqlSession = MybatisUtils.getSqlSession();
-
-        //方式一:getMapper
-        UserMapper userDao = sqlSession.getMapper(UserMapper.class);
-        List<User> userList = userDao.getUserList();
-
-        for (User user : userList) {
-            System.out.println(user);
-        }
-
-        //关闭SqlSession
-        sqlSession.close();
-	}
-   
-    @Test
-    public void deleteUser() {
+    public void addUser2() {
         SqlSession sqlSession = MybatisUtils.getSqlSession();
 
         UserMapper mapper = sqlSession.getMapper(UserMapper.class);
 
-        mapper.deleteUser(4);
+        Map<String, Object> map = new HashMap<String, Object>();
 
+        map.put("userid", 5);
+        map.put("passWord", "2211");
+
+        mapper.addUser2(map);
 
         sqlSession.commit();
         sqlSession.close();

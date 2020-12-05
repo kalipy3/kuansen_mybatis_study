@@ -33,43 +33,15 @@ public class UserDaoTest
         //关闭SqlSession
         sqlSession.close();
 	}
-    
+   
     @Test
-	public void getUserById() {
-	    SqlSession sqlSession = MybatisUtils.getSqlSession();
-
-        UserMapper mapper = sqlSession.getMapper(UserMapper.class);
-
-        User user = mapper.getUserById(1);
-        System.out.println(user);
-
-        sqlSession.close();
-    }
-
-    //注意：增删改一定要提交事务
-    //@Test
-    //public void addUser() {
-    //    SqlSession sqlSession = MybatisUtils.getSqlSession();
-
-    //    UserMapper mapper = sqlSession.getMapper(UserMapper.class);
-
-    //    int res = mapper.addUser(new User(4, "kalipy", "pwd2233"));
-    //    if (res > 0) {
-    //        System.out.println("insert into 成功！");
-    //    }
-
-    //    //提交事务
-    //    sqlSession.commit();
-    //    sqlSession.close();
-    //}
-    
-    @Test
-    public void updateUser() {
+    public void deleteUser() {
         SqlSession sqlSession = MybatisUtils.getSqlSession();
 
         UserMapper mapper = sqlSession.getMapper(UserMapper.class);
 
-        mapper.updateUser(new User(4, "yousa", "666"));
+        mapper.deleteUser(4);
+
 
         sqlSession.commit();
         sqlSession.close();

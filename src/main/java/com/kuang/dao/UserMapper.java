@@ -23,5 +23,8 @@ public interface UserMapper
 
     //修改用户
     int updateUser(User user);
+
+    //删除一个用户
+    int deleteUser(int id);
 }
 

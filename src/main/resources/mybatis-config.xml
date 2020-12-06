@@ -30,7 +30,6 @@
 
     <!-- 绑定接口 -->
     <mappers>
-        <mapper class="com.kuang.dao.UserMapper" />
     </mappers>
 
 </configuration>

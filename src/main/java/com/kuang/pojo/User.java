@@ -9,7 +9,6 @@ import org.apache.ibatis.type.Alias;
  * Distributed under terms of the MIT license.
  */
 
-@Alias("hello")
 public class User
 {
     private int id;

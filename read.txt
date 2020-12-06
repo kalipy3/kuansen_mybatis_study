@@ -299,3 +299,25 @@ mybatis执行流程：
 
 CRUD
     我们可以在工具类创建的时候实现自动提交事务
+-----------------------------------------------------------------------
+
+Lombok
+
+什么是lombok?
+    
+lombok的主要作用是通过注解自动生成getter和setter方法,构造器、equals方法、或者hash方法
+
+    gradle导入jar包
+    开发用：
+        compileOnly 'org.projectlombok:lombok:1.18.4'
+        annotationProcessor 'org.projectlombok:lombok:1.18.4'
+    测试用：
+        testCompileOnly 'org.projectlombok:lombok:1.18.4'
+        testAnnotationProcessor 'org.projectlombok:lombok:1.18.4'
+
+使用：
+@Data
+@AllArgsConstructor 
+@NoArgsConstructor
+@ToString
+    

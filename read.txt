@@ -127,3 +127,45 @@ MapperRegistry:注册绑定我们的Mapper文件
         接口和他的Mapper配置文件必须在同一个包下
 
         如果想分离，只需要在resource下建和接口所在相同的包即可
+-----------------------------------------------------------------------------
+
+生命周期及作用域(至关重要，因为错误的使用会导致严重的并发问题):
+
+            mybatis-config.xml配置
+                    |
+                    |
+                   \|/
+开始--->SqlSessionFactoryBuilder---->SqlSessionFactory
+                                            |
+                                            |
+                                           \|/
+             结束<-------Sql Mapper<----SqlSession
+             ^                              |
+             |                              |
+              ------------------------------
+
+SqlSessionFactoryBuilder:
+    一旦创建了SqlSessionFactory，就不再需要它了
+    局部变量
+
+SqlSessionFactory:
+    可以想象为连接池
+    SqlSessionFactory一旦被创建就应该在运行期间一直存在，没有任何理由丢弃它或重新创建另一个实例。
+    因此SqlSessionFactory的最佳作用域是应用作用域
+    最简单的就是使用单例模式或静态单例模式
+
+SqlSession:
+    连接到连接池的一个请求
+    SqlSession的实例不是线程安全的，因此不能被共享，所以最佳作用域是请求或方法作用域
+    用完之后要赶紧关闭，否则资源被占用
+
+
+                         ---------->SqlSession     ------->Mapper
+                        |                         |
+                        |                         |
+sqlSessionFactory------- ---------->SqlSession---- ------->Mapper
+                        |                         |
+                        |                         |
+                         ---------->SqlSession     -------->Mapper
+这里的每一个Mapper,就代表一个具体的业务
+

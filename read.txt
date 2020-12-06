@@ -76,4 +76,12 @@ read.txt
         接口实现类
             由原来在javaweb时候的UserDaoImpl转变为一个更简单的Mapper配置文件
                 xxMapper.xml
+---------------------------------------------------------------------------
 
+类型别名(aliases)
+    减少类完全限定名的冗余
+
+    <!-- 给实体类起别名 -->
+    <typeAliases>
+        <typeAlias type="com.kuang.pojo.User" alias="User" />
+    </typeAliases>

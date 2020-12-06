@@ -99,3 +99,31 @@ read.txt
     第一种可以diy别名，第二种不成,如果非要改名，需要在实体类上加注解
         @Alias("xxx")
         public class User
+
+-----------------------------------------------------------------------------
+
+映射器(mappers)
+MapperRegistry:注册绑定我们的Mapper文件
+    方式一(推荐):
+        <!-- 每一个Mapper.xml都需要在mybatis核心文件中注册 -->
+        <mappers>
+            <mapper resource="com/kuang/dao/UserMapper.xml" />
+        </mappers>
+
+    方式二:使用class文件绑定注册
+        <!-- 每一个Mapper.xml都需要在mybatis核心文件中注册 -->
+        <mappers>
+            <mapper class="com.kuang.dao.UserMapper" />
+        </mappers>
+    
+    方式三:使用包扫描进行绑定注册
+        <!-- 每一个Mapper.xml都需要在mybatis核心文件中注册 -->
+        <mappers>
+            <package name="com.kuang.dao" />
+        </mappers>
+
+    注意(规范)：
+        接口和他的Mapper配置文件必须同名
+        接口和他的Mapper配置文件必须在同一个包下
+
+        如果想分离，只需要在resource下建和接口所在相同的包即可

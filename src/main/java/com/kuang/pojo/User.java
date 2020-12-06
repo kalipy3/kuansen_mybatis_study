@@ -44,11 +44,11 @@ public class User
         this.name = name;
     }
 
-    public String getPwd() {
+    public String getPassword() {
         return password;
     }
 
-    public void setPwd(String password) {
+    public void setPassword(String password) {
         this.password = password;
     }
 
@@ -57,7 +57,7 @@ public class User
         return "User{" +
             "id = " + getId() +
             ", name = " + getName() +
-            ", password = " + getPwd() +
+            ", password = " + getPassword() +
             "}";
     }
 

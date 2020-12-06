@@ -1,4 +1,7 @@
 package com.kuang.pojo;
+
+import org.apache.ibatis.type.Alias;
+
 /*
  * User.java
  * Copyright (C) 2020 2020-12-05 21:20 kalipy <kalipy@debian>
@@ -6,6 +9,7 @@ package com.kuang.pojo;
  * Distributed under terms of the MIT license.
  */
 
+@Alias("hello")
 public class User
 {
     private int id;

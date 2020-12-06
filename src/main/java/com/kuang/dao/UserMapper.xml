@@ -10,7 +10,7 @@
     </select>
     
     <select id="getUserById" parameterType="int" resultType="com.kuang.pojo.User">
-        select * from mybatis.user where id = #{id}
+        select id, name, pwd as password from mybatis.user where id = #{id}
     </select>
 
     <!-- 注意记得把select改为insert 对象中的属性 可以直接取出 -->

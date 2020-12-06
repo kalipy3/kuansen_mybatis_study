@@ -21,17 +21,14 @@ import com.kuang.utils.MybatisUtils;
 public class UserDaoTest
 {
     @Test
-    public void getUserById2() {
+    public void getUserById() {
         SqlSession sqlSession = MybatisUtils.getSqlSession();
 
         UserMapper mapper = sqlSession.getMapper(UserMapper.class);
 
-        //模糊查询
-        List<User> userList = mapper.getUserLike("%s%");
+        User user = mapper.getUserById(1);
 
-        for (User user : userList) {
-            System.out.println(user);
-        }
+        System.out.println(user);
 
         sqlSession.close();
     }

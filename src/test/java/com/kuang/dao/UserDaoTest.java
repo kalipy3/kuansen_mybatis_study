@@ -29,8 +29,8 @@ public class UserDaoTest
     public void test() {
         SqlSession sqlSession = MybatisUtils.getSqlSession();
         UserMapper mapper = sqlSession.getMapper(UserMapper.class);
-        User user = mapper.getUerById(1);
-        logger.info("logger.info()--getUserById():"+user);
+        mapper.addUser(new User(7, "Hello", "11223344"));
+        logger.info("logger.info()--addUser():");
         sqlSession.close();
     }
 }

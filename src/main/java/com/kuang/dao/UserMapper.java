@@ -3,6 +3,7 @@ package com.kuang.dao;
 import java.util.List;
 import java.util.Map;
 
+import org.apache.ibatis.annotations.Delete;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
@@ -30,5 +31,8 @@ public interface UserMapper
 
     @Update("update user set name=#{name}, pwd=#{password} where id = #{id}")
     int updateUser(User user);
+
+    @Delete("delete from user where id = #{uid}")
+    int deleteUser(@Param("uid") int id);
 }
 

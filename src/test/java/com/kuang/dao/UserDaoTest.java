@@ -44,5 +44,21 @@ public class UserDaoTest
         logger.debug("debug:进入了testLog4j");
         logger.error("error:进入了testLog4j");
     }
+
+    @Test
+    public void getUserByLimit() {
+        SqlSession sqlSession = MybatisUtils.getSqlSession();
+        UserMapper mapper = sqlSession.getMapper(UserMapper.class);
+        
+        HashMap<String, Integer> map = new HashMap<String, Integer>();
+        map.put("startIndex", 0);
+        map.put("pageSize", 2);
+        List<User> userList = mapper.getUserByLimit(map);
+        for (User user : userList) {
+            logger.info("logger.info():"+user);
+        }
+
+        sqlSession.close();
+    }
 }
 

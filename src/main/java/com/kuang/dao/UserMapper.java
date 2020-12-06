@@ -34,5 +34,8 @@ public interface UserMapper
     User getUserById2(Map<String, Object> map);
 
     List<User> getUserLike(String value);
+
+    //分页
+    List<User> getUserByLimit(Map<String, Integer> map);
 }
 

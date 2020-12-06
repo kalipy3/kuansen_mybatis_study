@@ -39,4 +39,8 @@
     <select id="getUserLike" resultType="user">
         select * from mybatis.user where name like #{value}
     </select>
+
+    <select id="getUserByLimit" parameterType="map" resultMap="UserMap">
+        select * from mybatis.user limit #{startIndex}, #{pageSize}
+    </select>
 </mapper>

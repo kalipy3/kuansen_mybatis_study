@@ -350,4 +350,4 @@ lombok的主要作用是通过注解自动生成getter和setter方法,构造器�
         INSERT INTO `student` (`id`, `name`, `tid`) VALUES ('4', '小李', '1');
         INSERT INTO `student` (`id`, `name`, `tid`) VALUES ('5', '小王', '1');
 
-
+mkdir src/main/resources/com/kuang/dao -p

@@ -10,8 +10,8 @@ import org.apache.log4j.Logger;
 
 import org.junit.Test;
 
-import com.kuang.dao.UserMapper;
-import com.kuang.pojo.User;
+import com.kuang.dao.TeacherMapper;
+import com.kuang.pojo.Teacher;
 import com.kuang.utils.MybatisUtils;
 
 /*
@@ -28,9 +28,9 @@ public class UserDaoTest
     @Test
     public void test() {
         SqlSession sqlSession = MybatisUtils.getSqlSession();
-        UserMapper mapper = sqlSession.getMapper(UserMapper.class);
-        mapper.deleteUser(1);
-        logger.info("logger.info()--deleteUser():");
+        TeacherMapper mapper = sqlSession.getMapper(TeacherMapper.class);
+        Teacher teacher = mapper.getTeacher(1);
+        logger.info("logger.info()--getTeacher():"+teacher);
         sqlSession.close();
     }
 }

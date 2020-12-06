@@ -6,6 +6,8 @@ import java.util.Map;
 
 import org.apache.ibatis.session.SqlSession;
 
+import org.apache.log4j.Logger;
+
 import org.junit.Test;
 
 import com.kuang.pojo.User;
@@ -20,6 +22,8 @@ import com.kuang.utils.MybatisUtils;
 
 public class UserDaoTest
 {
+    static Logger logger = Logger.getLogger(UserDaoTest.class);
+
     @Test
     public void getUserById() {
         SqlSession sqlSession = MybatisUtils.getSqlSession();
@@ -29,8 +33,16 @@ public class UserDaoTest
         User user = mapper.getUserById(1);
 
         System.out.println(user);
+        logger.info("user-------:"+user);
 
         sqlSession.close();
+    }
+
+    @Test
+    public void testLog4j() {
+        logger.info("info:进入了testLog4j");
+        logger.debug("debug:进入了testLog4j");
+        logger.error("error:进入了testLog4j");
     }
 }
 

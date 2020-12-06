@@ -27,8 +27,10 @@
             </dataSource>
         </environment>
     </environments>
+
+    <!-- 绑定接口 -->
     <mappers>
-        <!-- 每一个Mapper.xml都要在mybatis的核心配置文件里注册 -->
-        <mapper resource="com/kuang/dao/UserMapper.xml"/>
+        <mapper class="com.kuang.dao.UserMapper" />
     </mappers>
+
 </configuration>

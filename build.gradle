@@ -32,6 +32,7 @@ dependencies {
     //compile "c3p0:c3p0:0.9.1.2"
     compile "mysql:mysql-connector-java:8.0.21"
     compile "org.mybatis:mybatis:3.5.3"
+    compile "org.mybatis:mybatis:3.5.3:sources"
     compile "apache-log4j:log4j:1.2.15"//1.2.8会报错
     // Use JUnit test framework
     testImplementation 'junit:junit:4.13'

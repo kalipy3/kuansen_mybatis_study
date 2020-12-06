@@ -3,6 +3,7 @@ package com.kuang.dao;
 import java.util.List;
 import java.util.Map;
 
+import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
 
 import com.kuang.pojo.User;
@@ -17,5 +18,9 @@ public interface UserMapper
 {
     @Select("select * from user")
     List<User> getUsers();
+
+    //若方法存在多个参数，所有的参数前面都要加上@Param("xx")
+    @Select("select * from user where id = #{id}")
+    User getUerById(@Param("id") int id);
 }
 

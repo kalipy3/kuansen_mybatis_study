@@ -9,7 +9,7 @@
         
     <!-- 给实体类起别名 -->
     <typeAliases>
-        <typeAlias type="com.kuang.pojo.User" alias="User" />
+        <package name="com.kuang.pojo" />
     </typeAliases>
 
     <environments default="development">

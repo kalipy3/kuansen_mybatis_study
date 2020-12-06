@@ -85,3 +85,15 @@ read.txt
     <typeAliases>
         <typeAlias type="com.kuang.pojo.User" alias="User" />
     </typeAliases>
+
+    也可以指定一个包名，mybatis会在包名下搜索需要的javaBean,比如：
+    扫描实体类的包，它的默认别名就是这个类的类名，首字母小写!!!
+        <!-- 给实体类起别名 -->
+        <typeAliases>
+            <package name="com.kuang.pojo" />
+        </typeAliases>
+
+    在实体类比较少的情况下，使用第一种
+    如果实体类很多，建议第二种
+
+    第一种可以diy别名，第二种不成

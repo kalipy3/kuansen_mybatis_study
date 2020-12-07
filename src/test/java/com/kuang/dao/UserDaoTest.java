@@ -25,8 +25,7 @@ public class UserDaoTest
 {
     static Logger logger = Logger.getLogger(UserDaoTest.class);
 
-    @Test
-    public void test() {
+    public static void main(String args[]) {
         SqlSession sqlSession = MybatisUtils.getSqlSession();
         TeacherMapper mapper = sqlSession.getMapper(TeacherMapper.class);
         Teacher teacher = mapper.getTeacher(1);

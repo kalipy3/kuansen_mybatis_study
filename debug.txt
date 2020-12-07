@@ -1,0 +1,10 @@
+
+:Author: kalipy
+:Email: kalipy@debian
+:Date: 2020-12-07 14:52
+
+调试mybatis源码
+
+java -Xdebug -Xrunjdwp:transport=dt_socket,address=8888,server=y,suspend=y  -cp build/classes/java/test:build/classes/java/main:kk:build/resources/main  com.kuang.dao.UserDaoTest
+
+jdbshell -attach 8888 -sourcepath ~/bak2/j2ee_study/kuansen_mybatis/src/test/java:/home/kalipy/bak2/j2ee_study/kuansen_mybatis/src/main/java:/home/kalipy/bak2/j2ee_study/kuansen_mybatis/gg

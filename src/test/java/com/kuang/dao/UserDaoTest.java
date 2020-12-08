@@ -30,10 +30,8 @@ public class UserDaoTest
     public void test() {
         SqlSession sqlSession = MybatisUtils.getSqlSession();
         TeacherMapper mapper = sqlSession.getMapper(TeacherMapper.class);
-        List<Teacher> teacherList = mapper.getTeacher();
-        for (Teacher teacher : teacherList) {
-            logger.info("logger.info()--test():"+teacher);
-        }
+        Teacher teacher = mapper.getTeacher(1);
+        logger.info("logger.info()--test():"+teacher);
         sqlSession.close();
     }
 }

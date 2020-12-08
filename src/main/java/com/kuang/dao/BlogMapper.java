@@ -24,5 +24,8 @@ public interface BlogMapper
 
     //更新
     int updateBlog(Map map);
+
+    //查询id=(1,3)区间的记录
+    List<Blog> queryBlogForeach(Map map);
 }
 

@@ -1,5 +1,6 @@
 package com.kuang.dao;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
@@ -92,18 +93,22 @@ public class UserDaoTest
     }
     
     @Test
-    public void updateBlog() {
+    public void queryBlogForeach() {
         SqlSession sqlSession = MybatisUtils.getSqlSession();
         BlogMapper mapper = sqlSession.getMapper(BlogMapper.class);
 
         HashMap map = new HashMap();
-        map.put("title", "title010");
-        map.put("author", "author010");
-        map.put("id", "40644fab688048af99287a3ec6f115b2");
 
-        int res = mapper.updateBlog(map);
+        ArrayList<Integer> ids = new ArrayList<Integer>();
+        ids.add(1);
+        ids.add(2);
 
-        logger.info("logger.info()--test--updateBlog():"+res);
+        map.put("ids", ids);
+        List<Blog> blogs = mapper.queryBlogForeach(map);
+        
+        for (Blog blog : blogs) {
+            logger.info("logger.info()--test--queryBlogForeach():"+blog);
+        }
 
         sqlSession.close();
     }

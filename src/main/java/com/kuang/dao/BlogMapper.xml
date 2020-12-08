@@ -56,4 +56,15 @@
         where id = #{id}
     </update>
 
+    <!-- select * from mybatis.blog where 1=1 and (id=1 or id=2 id=3) -->
+    <select id="queryBlogForeach" parameterType="map" resultType="blog">
+        select * from mybatis.blog
+        <where>
+            <!-- foreach 遍历并且拼接(id=1 or id=2 or id=3) -->
+            <foreach collection="ids" item="id" open="and (" close=")" separator="or">
+                id = #{id}
+            </foreach>
+        </where>
+    </select>
+
 </mapper>

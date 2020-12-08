@@ -90,5 +90,22 @@ public class UserDaoTest
 
         sqlSession.close();
     }
+    
+    @Test
+    public void updateBlog() {
+        SqlSession sqlSession = MybatisUtils.getSqlSession();
+        BlogMapper mapper = sqlSession.getMapper(BlogMapper.class);
+
+        HashMap map = new HashMap();
+        map.put("title", "title09");
+        map.put("author", "author09");
+        map.put("id", "40644fab688048af99287a3ec6f115b2");
+
+        int res = mapper.updateBlog(map);
+
+        logger.info("logger.info()--test--updateBlog():"+res);
+
+        sqlSession.close();
+    }
 }
 

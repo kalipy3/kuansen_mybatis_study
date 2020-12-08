@@ -1,6 +1,9 @@
 package com.kuang.pojo;
 
+import java.util.List;
+
 import lombok.Data;
+import com.kuang.pojo.Student;
 
 /*
  * Teacher.java
@@ -14,5 +17,8 @@ public class Teacher
     private int id;
 
     private String name;
+
+    //一个老师有多个学生
+    private List<Student> students;
 }
 

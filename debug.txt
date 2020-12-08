@@ -5,6 +5,15 @@
 
 调试mybatis源码
 
+方法一：
+
 java -Xdebug -Xrunjdwp:transport=dt_socket,address=8888,server=y,suspend=y  -cp build/classes/java/test:build/classes/java/main:kk:build/resources/main  com.kuang.dao.UserDaoTest
 
 jdbshell -attach 8888 -sourcepath ~/bak2/j2ee_study/kuansen_mybatis/src/test/java:/home/kalipy/bak2/j2ee_study/kuansen_mybatis/src/main/java:/home/kalipy/bak2/j2ee_study/kuansen_mybatis/gg
+
+----------------------------------------------------------------------------
+
+方法二：
+gradle test --debug-jvm
+
+jdbshell -attach 5005 -sourcepath ~/bak2/j2ee_study/kuansen_mybatis/src/test/java:/home/kalipy/bak2/j2ee_study/kuansen_mybatis/src/main/java:/home/kalipy/bak2/j2ee_study/kuansen_mybatis/gg

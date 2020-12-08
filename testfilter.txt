@@ -1,0 +1,16 @@
+testfilter.txt
+
+:Author: kalipy
+:Email: kalipy@debian
+:Date: 2020-12-08 12:53
+
+eg.
+    gradle test --tests UserDaoTest.testStudent
+-------------------------------------------------------
+# Executes all tests in SomeTestClass
+gradle test --tests SomeTestClass
+
+# Executes a single specified test in SomeTestClass
+gradle test --tests SomeTestClass.someSpecificMethod
+
+gradle test --tests SomeTestClass.*someMethod*

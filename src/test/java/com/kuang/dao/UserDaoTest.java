@@ -63,6 +63,8 @@ public class UserDaoTest
         BlogMapper mapper = sqlSession.getMapper(BlogMapper.class);
 
         HashMap map = new HashMap();
+        map.put("title", "title01");
+
         List<Blog> blogs = mapper.queryBlogIF(map);
 
         for (Blog blog : blogs) {

@@ -19,5 +19,7 @@ public interface BlogMapper
 
     //查询博客
     List<Blog> queryBlogIF(Map map);
+    
+    List<Blog> queryBlogChoose(Map map);
 }
 

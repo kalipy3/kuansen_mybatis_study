@@ -379,3 +379,5 @@ CREATE TABLE `blog` (
 
 IF
 
+choose(when otherwise)
+

@@ -18,4 +18,23 @@
             and author = #{author}
         </if>
     </select>
+
+    <select id="queryBlogChoose" parameterType="map" resultType="blog">
+        select * from mybatis.blog
+        <!-- where标签代替where 1=1,它可以根据test的成立与否智能的添加/去除and -->
+        <where>
+            <choose>
+                <when test="title != null">
+                    title = #{title}
+                </when>
+                <when test="author != null">
+                    and author = #{author}
+                </when>
+                <otherwise>
+                    and views = #{views} 
+                </otherwise>
+            </choose>
+        </where>
+    </select>
+
 </mapper>

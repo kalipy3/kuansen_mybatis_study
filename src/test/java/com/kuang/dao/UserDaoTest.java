@@ -73,5 +73,22 @@ public class UserDaoTest
 
         sqlSession.close();
     }
+    
+    @Test
+    public void queryBlogChoose() {
+        SqlSession sqlSession = MybatisUtils.getSqlSession();
+        BlogMapper mapper = sqlSession.getMapper(BlogMapper.class);
+
+        HashMap map = new HashMap();
+        map.put("author", "author02");
+
+        List<Blog> blogs = mapper.queryBlogChoose(map);
+
+        for (Blog blog : blogs) {
+            logger.info("logger.info()--test--queryBlogChoose():"+blog);
+        }
+
+        sqlSession.close();
+    }
 }
 

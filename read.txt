@@ -381,3 +381,13 @@ IF
 
 choose(when otherwise)
 
+SQL片段(复用sql语句)
+抽取公共部分：
+<sqli id="xx"></sql>
+
+在需要的地方ref引用即可：
+<include refid="xx"></include>
+
+注意：
+    最好基于单表定义
+    不要存在where标签

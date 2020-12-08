@@ -37,16 +37,20 @@
         </where>
     </select>
 
+    <sql id="if-title-author">
+        <if test="title != null">
+            title = #{title},
+        </if>
+        <if test="author != null">
+            author = #{author},
+        </if>
+    </sql>
+
     <update id="updateBlog" parameterType="map">
         update mybatis.blog
         <!-- set会智能的去掉逗号和添加/去除sql语句的set关键字 -->
         <set>
-            <if test="title != null">
-                title = #{title},
-            </if>
-            <if test="author != null">
-                author = #{author},
-            </if>
+            <include refid="if-title-author"></include>
         </set>
         <!-- 注意：where放在set外面set才会智能的去除逗号 -->
         where id = #{id}

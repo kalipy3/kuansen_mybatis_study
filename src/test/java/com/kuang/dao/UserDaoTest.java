@@ -97,8 +97,8 @@ public class UserDaoTest
         BlogMapper mapper = sqlSession.getMapper(BlogMapper.class);
 
         HashMap map = new HashMap();
-        map.put("title", "title09");
-        map.put("author", "author09");
+        map.put("title", "title010");
+        map.put("author", "author010");
         map.put("id", "40644fab688048af99287a3ec6f115b2");
 
         int res = mapper.updateBlog(map);

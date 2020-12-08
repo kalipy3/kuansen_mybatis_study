@@ -1,5 +1,6 @@
 package com.kuang.dao;
 
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -10,11 +11,10 @@ import org.apache.log4j.Logger;
 
 import org.junit.Test;
 
-import com.kuang.dao.TeacherMapper;
-import com.kuang.pojo.Student;
-import com.kuang.pojo.Teacher;
+import com.kuang.dao.BlogMapper;
+import com.kuang.pojo.Blog;
+import com.kuang.utils.IDUtils;
 import com.kuang.utils.MybatisUtils;
-
 /*
  * UserDaoTest.java
  * Copyright (C) 2020 2020-12-05 21:31 kalipy <kalipy@debian>
@@ -29,9 +29,31 @@ public class UserDaoTest
     @Test
     public void test() {
         SqlSession sqlSession = MybatisUtils.getSqlSession();
-        TeacherMapper mapper = sqlSession.getMapper(TeacherMapper.class);
-        Teacher teacher = mapper.getTeacher2(1);
-        logger.info("logger.info()--test--getTeacher2():"+teacher);
+        BlogMapper mapper = sqlSession.getMapper(BlogMapper.class);
+
+        Blog blog = new Blog();
+        blog.setId(IDUtils.getId());
+        blog.setTitle("title01");
+        blog.setAuthor("author01");
+        blog.setCreateTime(new Date());
+        blog.setViews(100);
+        mapper.addBlog(blog);
+
+        blog.setId(IDUtils.getId());
+        blog.setTitle("title02");
+        blog.setAuthor("author02");
+        blog.setCreateTime(new Date());
+        blog.setViews(200);
+        mapper.addBlog(blog);
+
+        blog.setId(IDUtils.getId());
+        blog.setTitle("title03");
+        blog.setAuthor("author03");
+        blog.setCreateTime(new Date());
+        blog.setViews(300);
+        mapper.addBlog(blog);
+
+        logger.info("logger.info()--test():");
         sqlSession.close();
     }
 }

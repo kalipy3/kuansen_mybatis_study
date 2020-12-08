@@ -358,3 +358,22 @@ mkdir src/main/resources/com/kuang/dao -p
 
 1.环境搭建
 
+2.面试高频
+    mysql引擎
+    innoDB底层原理
+    索引
+    索引优化
+------------------------------------------------------------------------
+
+动态sql(根据不同条件生成不同的sql语句)
+环境搭建：
+
+CREATE TABLE `blog` (
+  `id` varchar(50) NOT NULL COMMENT '博客id',
+  `title` varchar(100) NOT NULL COMMENT '博客标题',
+  `author` varchar(30) NOT NULL COMMENT '博客作者',
+  `create_time` datetime NOT NULL COMMENT '创建时间',
+  `views` int(30) NOT NULL COMMENT '浏览量'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8
+
+

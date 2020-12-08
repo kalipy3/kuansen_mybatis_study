@@ -8,7 +8,9 @@
     <properties resource="db.properties"/>
 
     <settings>
-            <setting name="logImpl" value="LOG4J" />
+        <setting name="logImpl" value="LOG4J" />
+        <!-- 是否开启自动驼峰命名映射(sql的xx_yy字段到javaBean的xxYY属性) -->
+        <setting name="mapUnderscoreToCamelCase" value="true" />
     </settings>
 
     <!-- 给实体类起别名 -->
@@ -30,8 +32,7 @@
 
     <!-- 绑定接口 -->
     <mappers>
-        <mapper class="com.kuang.dao.TeacherMapper" />
-        <mapper class="com.kuang.dao.StudentMapper" />
+        <mapper class="com.kuang.dao.BlogMapper" />
     </mappers>
 
 </configuration>
